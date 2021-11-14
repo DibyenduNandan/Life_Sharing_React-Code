@@ -33,20 +33,24 @@ const MedicineScreen = () => {
   
   return (
     <>
-      {location ? (
-        <MapView style={styles.map} initialRegion={{
-        longitude:location.coords.longitude,
-        latitude:location.coords.latitude,
-        longitudeDelta:0.01,
-        latitudeDelta:0.01,
-      }}>
-          {state.shop.map((shop) => (
-            <MapView.Marker
-              coordinate={shop.location[0].coords}
-              title={shop.name}
-            />
-          ))}
-        </MapView>
+      {state.shop.map ? (
+        location ? (
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              longitude: location.coords.longitude,
+              latitude: location.coords.latitude,
+              longitudeDelta: 0.01,
+              latitudeDelta: 0.01,
+            }}>
+            {state.shop.map((shop) => (
+              <MapView.Marker
+                coordinate={shop.location[0].coords}
+                title={shop.name}
+              />
+            ))}
+          </MapView>
+        ) : null
       ) : null}
       <Text style={styles.smallheading2}>Shops Near You</Text>
       <FlatList
