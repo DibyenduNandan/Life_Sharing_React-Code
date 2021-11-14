@@ -33,7 +33,7 @@ const MedicineScreen = () => {
   
   return (
     <>
-      {state.shop.map ? (
+      {state.shop ? (
         location ? (
           <MapView
             style={styles.map}
