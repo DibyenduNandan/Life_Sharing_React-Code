@@ -69,9 +69,10 @@ const DoctorScreen = () => {
                   paddingLeft: 5,
                 }}>
                 <Image
-                  source={{
+                  source={
+                    item.avtar?({
                     uri: 'data:image/png;base64,' + item.avtar,
-                  }}
+                  }):require('../../image/Default_profile.jpg')}
                   style={{
                     width: 80,
                     height: 80,
