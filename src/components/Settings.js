@@ -124,7 +124,13 @@ const Settings = ({ navigation }) => {
       </View>
     );
   } else {
-    return null;
+    return (
+      <>
+        <View style={{ padding: 20 }}>
+          <Button onPress={doctorlogin} title="Please Reload the Page" />
+        </View>
+      </>
+    );
   }
 };
 const styles = StyleSheet.create({
