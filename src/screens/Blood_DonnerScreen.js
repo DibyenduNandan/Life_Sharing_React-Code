@@ -56,11 +56,12 @@ const DonnerScreen = () => {
                   paddingLeft: 5,
                 }}>
                 <Image
-                  source={{
+                  source={
+                    item.avtar?({
                     uri:
                       'data:image/png;base64,' +
                       arrayBufferToBase64(item.avtar.data),
-                  }}
+                  }):require('../../image/Default_profile.jpg')}
                   style={{
                     width: 80,
                     height: 80,
